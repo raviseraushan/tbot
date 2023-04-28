@@ -1,5 +1,7 @@
 FROM python:3.10-slim
 
+EXPOSE 80/tcp
+
 RUN pip3 install -U pyrogram tgcrypto
 RUN pip3 install -U https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 
