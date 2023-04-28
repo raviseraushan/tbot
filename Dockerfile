@@ -1,7 +1,7 @@
 FROM python:3.10-slim
 
-ADD rerequirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip3 install -U pyrogram tgcrypto
+RUN pip3 install -U https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 
 COPY dd.py dd.py
 
