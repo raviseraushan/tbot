@@ -2,9 +2,6 @@ from pyrogram import Client, filters, enums
 import yt_dlp as youtube_dl
 from pyrogram.types import (ReplyKeyboardMarkup, InlineKeyboardMarkup,
                             InlineKeyboardButton)
-# api_id = 1790751
-# api_hash = "d26d7dd736515a3d8ea6e7d709c35cd0"
-# bot_token = "6041491437:AAG8q5bgernPvWLyDsbf1yn9pK-EcH7nhto"
 opts = {"format": "best", 'flat_playlist': True, "addmetadata": True, "key": "FFmpegMetadata", "prefer_ffmpeg": True, "geo_bypass": True, "nocheckcertificate": True,
         "postprocessors": [{"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}], "outtmpl": "%(title)s.mp4", "logtostderr": False, "quiet": True, }
 
@@ -22,10 +19,10 @@ def command1(bot, message):
     bot.send_message(message.chat.id, "This is a ReplyKeyboardMarkup example",
                      reply_markup=ReplyKeyboardMarkup(
                          [
-                             ["A", "B", "C", "D"],  # First row
-                             ["E", "F", "G"],  # Second row
-                             ["H", "I"],  # Third row
-                             ["J"]  # Fourth row
+                             ["💌Anime💌"],  # First row
+                             ["💺Hollywood💺"],  # Second row
+                             ["🧳Bollywood🧳", "South"],  # Third row
+                             [">> Back"]  # Fourth row
                          ],
                          resize_keyboard=True  # Make the keyboard smaller
                      ))
@@ -35,62 +32,24 @@ def command1(bot, message):
 def com(bot, message):
     bot.send_message(message.chat.id, "This is a InlineKeyboardMarkup example",
                      reply_markup=InlineKeyboardMarkup(
-                         [
+                         
                              [  # First row
                                  InlineKeyboardButton(  # Generates a callback query when pressed
                                      "Button",
                                      callback_data="data"
                                  ),
                                  InlineKeyboardButton(  # Opens a web URL
-                                     "URL",
+                                     "JSON File",
                                      url="https://docs.pyrogram.org"
                                  ),
-                             ],
-                             [  # Second row
-                                 InlineKeyboardButton(  # Opens the inline interface
-                                     "Choose chat",
-                                     switch_inline_query="pyrogram"
-                                 ),
-                                 InlineKeyboardButton(  # Opens the inline interface in the current chat
-                                     "Inline here",
-                                     switch_inline_query_current_chat="pyrogram"
-                                 )
                              ]
-                         ]
+                         
                      ))
 
 
 @bot.on_message(filters.command('help'))
 def command2(bot, message):
-    message.reply_text(f'''
-**bold**
-
-__italic__
-
---underline--
-
-~~strike~~
-
-||spoiler||
-
-[text URL](https://pyrogram.org/)
-
-[text user mention](tg://user?id=123456789)
-
-`inline fixed-width code`
-
-```
-pre-formatted
-  fixed-width
-   code block
-```
-
-```python
-pre-formatted
-  fixed-width
-   code block
-with language
-```''')
+    message.reply_text(f'''** Tell me how can i help you?**'')
 
 
 @bot.on_message(filters.command('img'))
