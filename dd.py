@@ -49,7 +49,36 @@ def com(bot, message):
 
 @bot.on_message(filters.command('help'))
 def command2(bot, message):
-    message.reply_text(f'''** Tell me how can i help you?**''')
+    message.reply_text(f'''
+**bold**
+
+__italic__
+
+--underline--
+
+~~strike~~
+
+||spoiler||
+
+[text URL](https://pyrogram.org/)
+
+[text user mention](tg://user?id=123456789)
+
+`inline fixed-width code`
+
+```
+pre-formatted
+  fixed-width
+   code block
+```
+
+```python
+pre-formatted
+  fixed-width
+   code block
+with language
+```''')
+
 
 @bot.on_message(filters.command('img'))
 def command2(bot, message):
